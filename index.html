@@ -25,7 +25,7 @@
         <div class="container">
 
             <div class="ContainerInput">
-                <input type="text" placeholder="Inserire mansione" v-model = "message"><a href="#" @click = "addTask()">inserisci</a>
+                <input type="text" placeholder="Inserire mansione" v-model = "message" @keyup.enter="addTask()"><a href="#" @click = "addTask()">inserisci</a>
             </div>
             <h4 v-if ="error" style="color: red;">inseire una mansione di almeno 5 caratteri</h4>
 
