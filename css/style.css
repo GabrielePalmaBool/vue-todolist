@@ -12,13 +12,14 @@ h2 {
 
 .fa-solid {
     position: absolute;
-    right: 0;
-   
+    right: 1%;
+    margin-top: 5px;
 }
 
 
-
-
+h4{
+    text-align: center;
+}
 
 /* STILI MAIN */
 

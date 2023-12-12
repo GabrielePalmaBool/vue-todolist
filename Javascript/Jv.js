@@ -33,6 +33,10 @@ createApp({
 
             indexTod: 0,
 
+            error: false,
+
+            message : "",
+
             tasks: [
                 {
                     text: 'Fare i compiti',
@@ -47,16 +51,57 @@ createApp({
                     done: false,
                 },
                 {
-                    text: 'Fare il bucato',
+                    text: 'Portare fuori il cane',
+                    done: true
+                },
+                {
+                    text: 'Pulire casa',
+                    done: true
+                },
+                {
+                    text: 'Andare a ritirare abito',
                     done: false
-                }
+                },
+                {
+                    text: 'Andare a prendere i bambini da scuola',
+                    done: false
+                },
             ]
                 
         }
     },
     methods: {
-
         
+        addTask(){
+                //controllo se la lunghezza minima del task è rispettata, se non è così
+                if(this.message.length < 5){
+
+                    //richiamo messaggio di errore
+                    this.error = true;
+                  
+                }
+
+                //altrimenti
+                else{
+                    // creo una variabile booleana che setto a false che indica un compito ancora da terminare
+                    done = false;
+                    //creo un'altra variabile che "unisce" il testo digitato dall'utente con la variabile booleana: oggetto
+                    taskN = {text:this.message,done:done};
+
+                    //inserisco tale variabile nel mio array
+                    this.tasks.unshift(taskN);
+
+                    //imposto la variabile messaggio vuota
+                    this.message = "";
+
+                    console.log( this.tasks);
+            }
+        },
+
+        delTask(indice){
+            //elimino quello specifico compito
+            this.tasks.splice(indice,1);
+        }
   
     },
 
