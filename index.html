@@ -33,7 +33,7 @@
             
             <ul v-if ="tasks.length > 0" >
                 <li v-for="(task,i) in tasks" :key="i">
-                    <h2 :class="task.done ? 'complete' : 'tocomplete'">{{task.text}}</h2>
+                    <h2 :class="task.done ? 'complete' : 'tocomplete'" @click = "Revdone(i)">{{task.text}}</h2>
                     <i class="fa-solid fa-xmark" @click = "delTask(i)"></i>
                 </li>
             </ul>

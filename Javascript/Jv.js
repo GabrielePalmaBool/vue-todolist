@@ -18,6 +18,8 @@ Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
 Bonus:
 1) oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 
+2) cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
 */
 
 //SVOLGIMENTO
@@ -101,12 +103,26 @@ createApp({
         delTask(indice){
             //elimino quello specifico compito
             this.tasks.splice(indice,1);
+        },
+
+        //bonus 2
+        Revdone(indice) {
+
+            //se il valore della variabile done dell'oggetto specificato dal mio indice è false
+            if(this.tasks[indice].done ==false){
+
+                //la cambio in true
+                this.tasks[indice].done = true;
+
+            }
+            //altrimenti
+            else{
+                //la cambio in false
+                this.tasks[indice].done = false;
+                
+            }
         }
   
     },
-
-    mounted() {
-        
-    }
 
 }).mount('#app');
