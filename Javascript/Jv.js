@@ -40,7 +40,11 @@ createApp({
                 }, 
                 {
                     text: 'Fare la spesa',
-                    done: true
+                    done: true,
+                },
+                {
+                    text: 'Fare il bucato',
+                    done: false,
                 },
                 {
                     text: 'Fare il bucato',

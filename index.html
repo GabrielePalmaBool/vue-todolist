@@ -21,7 +21,21 @@
 <body>
 
     <div id="app">
-        
+
+        <div class="container">
+
+            <div class="ContainerInput">
+                <input type="text" placeholder="Inserire mansione"><a href="#" >inserisci</a>
+            </div>
+            
+            <ul v-if ="tasks.length > 0" >
+                <li v-for="(task,i) in tasks" :key="i">
+                    <h2 :class="task.done ? 'complete' : 'tocomplete'">{{task.text}}</h2>
+                    <i class="fa-solid fa-xmark" @click = "delTask(i)"></i>
+                </li>
+            </ul>
+            <h2 v-else> Non ci sono tasks</h2>
+        </div>
     </div>
 
 
