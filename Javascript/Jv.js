@@ -79,25 +79,21 @@ createApp({
                 if(this.message.length < 5){
 
                     //richiamo messaggio di errore
-                    this.error = true;
+                    return this.error = true;
                   
                 }
 
-                //altrimenti
-                else{
-                    // creo una variabile booleana che setto a false che indica un compito ancora da terminare
-                    done = false;
-                    //creo un'altra variabile che "unisce" il testo digitato dall'utente con la variabile booleana: oggetto
-                    taskN = {text:this.message,done:done};
+                //creo un'altra variabile : oggetto, con il testo scelto dall'utente
+                taskN = {text:this.message,done:false};
 
-                    //inserisco tale variabile nel mio array
-                    this.tasks.unshift(taskN);
+                //inserisco tale variabile nel mio array
+                this.tasks.unshift(taskN);
 
-                    //imposto la variabile messaggio vuota
-                    this.message = "";
+                //imposto la variabile messaggio vuota
+                this.message = "";
 
-                    console.log( this.tasks);
-            }
+                console.log( this.tasks);
+            
         },
 
         delTask(indice){
