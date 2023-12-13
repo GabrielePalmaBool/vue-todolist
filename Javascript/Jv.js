@@ -33,8 +33,6 @@ createApp({
 
         return {
 
-            indexTod: 0,
-
             error: false,
 
             message : "",
@@ -101,24 +99,7 @@ createApp({
             this.tasks.splice(indice,1);
         },
 
-        //bonus 2
-        Revdone(indice) {
-
-            //se il valore della variabile done dell'oggetto specificato dal mio indice è false
-            if(this.tasks[indice].done ==false){
-
-                //la cambio in true
-                this.tasks[indice].done = true;
-
-            }
-            //altrimenti
-            else{
-                //la cambio in false
-                this.tasks[indice].done = false;
-                
-            }
-        }
-  
+        
     },
 
 }).mount('#app');
